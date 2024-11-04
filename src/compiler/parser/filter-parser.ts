@@ -1,3 +1,10 @@
+/*
+<!-- 输入 -->
+{{ price | currency('$') | round }}
+
+<!-- 解析后的JavaScript代码 -->
+_f("round")(_f("currency")(price, '$'))
+*/
 const validDivisionCharRE = /[\w).+\-_$\]]/
 
 export function parseFilters(exp: string): string {

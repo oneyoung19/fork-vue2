@@ -1,3 +1,17 @@
+/*
+<!-- 输入文本 -->
+Hello {{ name }}!
+
+<!-- 解析结果 -->
+{
+  expression: '"Hello " + _s(name) + "!"',
+  tokens: [
+    "Hello ",
+    { "@binding": "name" },
+    "!"
+  ]
+}
+*/
 import { cached } from 'shared/util'
 import { parseFilters } from './filter-parser'
 
