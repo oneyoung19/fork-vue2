@@ -12,14 +12,22 @@ const template = `<div
   :style="style"
   :[dynamic]="dynamic"
   @click="handleClick"
+  @confirm.stop.prevent="handleConfirm"
   @[event]="handleEvent"
   v-model="value"
 >
+  <span>static</span>
   <span>{{ name }}</span>
   <span>{{ msg | convert }}</span>
 </div>`
 
+const template2 = `<div>
+  <span>static</span>
+</div>`
+
 export const parseResult = parse(template, {})
+export const parseResult2 = parse(template2, {})
+
 const parseHTMLResult = parseHTML(template, {
   start(tag, attrs, unary, start, end) {
     console.log('start', tag, attrs, unary, start, end)
@@ -36,4 +44,5 @@ const parseHTMLResult = parseHTML(template, {
 })
 
 console.log('parseResult', parseResult)
+console.log('parseResult2', parseResult2)
 console.log('parseHTMLResult', parseHTMLResult)
