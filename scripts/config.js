@@ -115,6 +115,14 @@ const builds = {
     env: 'production',
     banner
   },
+  'full-start': {
+    entry: resolve('compiler/parser/contants/template.ts'),
+    dest: resolve('public/main.js'),
+    format: 'umd',
+    env: 'development',
+    alias: { he: './entity-decoder' },
+    banner
+  },
   // Runtime+compiler development build (Browser)
   'full-dev': {
     entry: resolve('web/entry-runtime-with-compiler.ts'),
