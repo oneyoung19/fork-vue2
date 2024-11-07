@@ -40,7 +40,7 @@
   "sideEffects": false,
   "scripts": {
     "serve": "npx serve public",
-    "start": "node_modules/rollup/dist/bin/rollup -w -c scripts/config.js --environment TARGET:full-start",
+    "start": "node_modules/rollup/dist/bin/rollup -w -c scripts/config.js --environment TARGET:compiler.parser",
     "dev": "node_modules/rollup/dist/bin/rollup -w -c scripts/config.js --environment TARGET:full-dev",
     "dev:cjs": "node_modules/rollup/dist/bin/rollup -w -c scripts/config.js --environment TARGET:runtime-cjs-dev",
     "dev:esm": "node_modules/rollup/dist/bin/rollup -w -c scripts/config.js --environment TARGET:runtime-esm",

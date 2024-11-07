@@ -7,6 +7,23 @@ const ts = require('rollup-plugin-typescript2')
 
 const version = process.env.VERSION || require('../package.json').version
 const featureFlags = require('./feature-flags')
+const { flattenDebuggerPathMap } = require('./debugger')
+
+function getDebuggerPathMapConfigs() {
+  const obj = {}
+  Object.keys(flattenDebuggerPathMap).forEach(key => {
+    const value = flattenDebuggerPathMap[key]
+    obj[key] = {
+      entry: resolve(value),
+      dest: resolve(`public/${key}.js`),
+      format: 'umd',
+      env: 'development',
+      alias: { he: './entity-decoder' },
+      banner
+    }
+  })
+  return obj
+}
 
 const banner =
   '/*!\n' +
@@ -115,14 +132,15 @@ const builds = {
     env: 'production',
     banner
   },
-  'full-start': {
-    entry: resolve('compiler/parser/contants/template.ts'),
-    dest: resolve('public/main.js'),
-    format: 'umd',
-    env: 'development',
-    alias: { he: './entity-decoder' },
-    banner
-  },
+  // 'full-start': {
+  //   entry: resolve('compiler/parser/debugger/template.ts'),
+  //   dest: resolve('public/main.js'),
+  //   format: 'umd',
+  //   env: 'development',
+  //   alias: { he: './entity-decoder' },
+  //   banner
+  // },
+  ...getDebuggerPathMapConfigs(),
   // Runtime+compiler development build (Browser)
   'full-dev': {
     entry: resolve('web/entry-runtime-with-compiler.ts'),

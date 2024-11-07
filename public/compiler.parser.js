@@ -3,11 +3,10 @@
  * (c) 2014-2024 Evan You
  * Released under the MIT License.
  */
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.Vue = {}));
-})(this, (function (exports) { 'use strict';
+(function (factory) {
+  typeof define === 'function' && define.amd ? define(factory) :
+  factory();
+})((function () { 'use strict';
 
   var decoder;
   var he = {
@@ -1753,12 +1752,8 @@
       }
   }
 
-  var template = "<div\n  class=\"container\"\n  style=\"color: red\"\n  v-if=\"isShow\"\n  :class=\"class\"\n  :style=\"style\"\n  @click=\"handleClick\"\n>\n  <span>{{ name }}</span>\n  <span>{{ msg | convert }}</span>\n</div>";
+  var template = "<div\n  class=\"container\"\n  style=\"color: red\"\n  v-if=\"isShow\"\n  :class=\"class\"\n  :style=\"style\"\n  :[dynamic]=\"dynamic\"\n  @click=\"handleClick\"\n  @[event]=\"handleEvent\"\n  v-model=\"value\"\n>\n  <span>{{ name }}</span>\n  <span>{{ msg | convert }}</span>\n</div>";
   var result = parse(template, {});
   console.log(result);
-
-  exports.result = result;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
 
 }));

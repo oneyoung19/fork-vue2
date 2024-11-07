@@ -1,4 +1,4 @@
-import { parse } from '../index'
+import { parse } from '../parser/index'
 
 const template = `<div
   class="container"
@@ -6,12 +6,15 @@ const template = `<div
   v-if="isShow"
   :class="class"
   :style="style"
+  :[dynamic]="dynamic"
   @click="handleClick"
+  @[event]="handleEvent"
+  v-model="value"
 >
   <span>{{ name }}</span>
   <span>{{ msg | convert }}</span>
 </div>`
 
-export const result = parse(template, {})
+const result = parse(template, {})
 
 console.log(result)
