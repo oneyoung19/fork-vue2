@@ -1,8 +1,6 @@
 const debuggerPathMap = {
-  compiler: {
-    index: 'src/compiler/debugger/index.ts',
-    parser: 'src/compiler/debugger/parser.ts',
-    codegen: 'src/compiler/debugger/codegen.ts',
+  debugger: {
+    compiler: 'src/compiler/debugger/index.ts'
   }
 }
 

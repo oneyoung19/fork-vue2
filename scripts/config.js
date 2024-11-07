@@ -15,7 +15,7 @@ function getDebuggerPathMapConfigs() {
     const value = flattenDebuggerPathMap[key]
     obj[key] = {
       entry: resolve(value),
-      dest: resolve(`public/${key}.js`),
+      dest: resolve(`public/debugger/${key.split('.').pop()}.js`),
       format: 'umd',
       env: 'development',
       alias: { he: './entity-decoder' },
@@ -132,14 +132,6 @@ const builds = {
     env: 'production',
     banner
   },
-  // 'full-start': {
-  //   entry: resolve('compiler/parser/debugger/template.ts'),
-  //   dest: resolve('public/main.js'),
-  //   format: 'umd',
-  //   env: 'development',
-  //   alias: { he: './entity-decoder' },
-  //   banner
-  // },
   ...getDebuggerPathMapConfigs(),
   // Runtime+compiler development build (Browser)
   'full-dev': {
