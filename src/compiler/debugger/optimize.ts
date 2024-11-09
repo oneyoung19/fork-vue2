@@ -1,6 +1,6 @@
 import { optimize } from '../optimizer'
 
-import { parseResult as ast, parseResult2 as ast2, parseResult3 as ast3 } from './parser'
+import { parseResult as ast, parseResult2 as ast2, parseResult3 as ast3, parseResult4 as ast4 } from './parser'
 import { generate } from '../codegen/index'
 
 optimize(ast, {
@@ -12,11 +12,16 @@ optimize(ast2, {
 optimize(ast3, {
   isReservedTag: (tag: string) => true
 })
+optimize(ast4, {
+  isReservedTag: (tag: string) => true
+})
 
 export const optimizeResult = generate(ast, {})
 export const optimizeResult2 = generate(ast2, {})
 export const optimizeResult3 = generate(ast3, {})
+export const optimizeResult4 = generate(ast4, {})
 
 console.log('optimizeResult', optimizeResult, ast)
 console.log('optimizeResult2', optimizeResult2, ast2)
 console.log('optimizeResult3', optimizeResult3, ast3)
+console.log('optimizeResult4', optimizeResult4, ast4)

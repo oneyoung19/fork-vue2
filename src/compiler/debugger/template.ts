@@ -2,7 +2,7 @@ export const template = `<div
   class="container"
   style="color: red"
   v-if="isShow"
-  :class="class"
+  :class="className"
   :style="style"
   :[dynamic]="dynamic"
   @click="handleClick"
@@ -24,5 +24,15 @@ export const template3 = `<div v-for="item in list" :key="item.id">
   <div>
     static message
     <span>静态根节点存在for作用域内</span>
+  </div>
+</div>`
+
+export const template4 = `<div>
+  <div>
+    <span>静态根节点1</span>
+  </div>
+  <div>{{ msg }}</div>
+  <div>
+    <span>静态根节点2</span>
   </div>
 </div>`

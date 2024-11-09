@@ -3,11 +3,12 @@
 */
 import { parse } from '../parser/index'
 import { parseHTML } from '../parser/html-parser'
-import { template, template2, template3 } from './template'
+import { template, template2, template3, template4 } from './template'
 
 export const parseResult = parse(template, {})
 export const parseResult2 = parse(template2, {})
 export const parseResult3 = parse(template3, {})
+export const parseResult4 = parse(template4, {})
 
 const parseHTMLResult = parseHTML(template, {
   start(tag, attrs, unary, start, end) {
