@@ -3,30 +3,11 @@
 */
 import { parse } from '../parser/index'
 import { parseHTML } from '../parser/html-parser'
-
-const template = `<div
-  class="container"
-  style="color: red"
-  v-if="isShow"
-  :class="class"
-  :style="style"
-  :[dynamic]="dynamic"
-  @click="handleClick"
-  @confirm.stop.prevent="handleConfirm"
-  @[event]="handleEvent"
-  v-model="value"
->
-  <span>static</span>
-  <span>{{ name }}</span>
-  <span>{{ msg | convert }}</span>
-</div>`
-
-const template2 = `<div>
-  <span>static</span>
-</div>`
+import { template, template2, template3 } from './template'
 
 export const parseResult = parse(template, {})
 export const parseResult2 = parse(template2, {})
+export const parseResult3 = parse(template3, {})
 
 const parseHTMLResult = parseHTML(template, {
   start(tag, attrs, unary, start, end) {

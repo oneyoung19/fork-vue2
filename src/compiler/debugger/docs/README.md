@@ -12,3 +12,5 @@ codegen (代码生成) → 代码字符串  【codegen/index.ts】
 ↓
 to-function (转换函数) → 可执行函数  【to-function.ts】
 ```
+
+怎么样才会标记成静态节点
