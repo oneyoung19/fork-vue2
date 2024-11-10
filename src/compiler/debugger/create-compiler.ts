@@ -13,7 +13,7 @@ console.log('compile', compile)
 console.log('compileToFunctions', compileToFunctions)
 
 console.log('template', compile(template))
-console.log('template', compileToFunctions(template))
+console.log('template', compileToFunctions(template).render)
 
 console.log('template2', compile(template2))
 console.log('template2', compileToFunctions(template2))

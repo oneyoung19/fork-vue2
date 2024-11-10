@@ -1,6 +1,7 @@
 const debuggerPathMap = {
   debugger: {
-    compiler: 'src/compiler/debugger/index.ts'
+    compiler: 'src/compiler/debugger/index.ts',
+    core: 'src/core/debugger/index.ts'
   }
 }
 

@@ -9,6 +9,7 @@ export const template = `<div
   @confirm.stop.prevent="handleConfirm"
   @[event]="handleEvent"
   v-model="value"
+  v-html="html"
 >
   <span>static</span>
   <span>{{ name }}</span>
