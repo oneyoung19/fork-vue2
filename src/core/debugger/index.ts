@@ -1,1 +1,9 @@
-console.log('debugger')
+
+import Vue from 'core/index'
+
+console.dir(Vue)
+
+console.log('$isServer', Vue.prototype.$isServer)
+
+// 全局config
+console.log('config', Vue.config)

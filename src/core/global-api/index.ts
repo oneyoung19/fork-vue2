@@ -9,11 +9,11 @@ import builtInComponents from '../components/index'
 import { observe } from 'core/observer/index'
 
 import {
-  warn,
-  extend,
-  nextTick,
-  mergeOptions,
-  defineReactive
+  warn, // ./debug
+  extend, // shared/util
+  nextTick, // ./next-tick
+  mergeOptions, // ./options
+  defineReactive // ../observer/index
 } from '../util/index'
 import type { GlobalAPI } from 'types/global-api'
 
