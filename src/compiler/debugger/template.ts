@@ -11,9 +11,16 @@ export const template = `<div
   v-model="value"
   v-html="html"
 >
+  <slot></slot>
   <span>static</span>
   <span>{{ name }}</span>
   <span>{{ msg | convert }}</span>
+  <HelloWorld>
+    <template v-slot:default>123</template>
+    <template v-slot:scope="slotScope">
+      {{ slotScope }}
+    </template>
+  </HelloWorld>
 </div>`
 
 export const template2 = `<div>
@@ -35,5 +42,18 @@ export const template4 = `<div>
   <div>{{ msg }}</div>
   <div>
     <span>静态根节点2</span>
+  </div>
+</div>`
+
+export const template5 = `<div>
+  <div>{{ msg }}</div>
+  <div>
+    <span>节点1</span>
+  </div>
+  <div>
+    <span>节点2</span>
+  </div>
+  <div v-show="show">
+    <span>节点3</span>
   </div>
 </div>`

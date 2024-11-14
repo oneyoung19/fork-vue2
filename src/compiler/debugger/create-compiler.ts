@@ -2,7 +2,7 @@ import { template, template2, template4 } from './template'
 import { createCompiler } from '../index'
 
 import { baseOptions } from 'web/compiler/options'
-
+// const baseOptions = {}
 const { compile, compileToFunctions } = createCompiler(baseOptions)
 
 

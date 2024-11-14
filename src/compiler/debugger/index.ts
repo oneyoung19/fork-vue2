@@ -2,6 +2,6 @@
 // import { codegenResult } from './codegen'
 // import './parser'
 // import './optimize'
-// import './codegen'
+import './codegen'
 
-import './create-compiler'
+// import './create-compiler'

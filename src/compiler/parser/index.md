@@ -18,6 +18,7 @@ export function parse(template: string, options: CompilerOptions): ASTElement {
   let currentParent // 当前正在处理的父节点
   let inVPre = false  // 是否在v-pre中
   let inPre = false   // 是否在<pre>标签中
+}
 ```
 
 ### 2. 核心解析过程
