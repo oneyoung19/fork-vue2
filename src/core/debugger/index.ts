@@ -1,9 +1,10 @@
 
-import Vue from 'core/index'
+import './global-api'
+// import Vue from 'core/index'
 
-console.dir(Vue)
+// console.dir(Vue)
 
-console.log('$isServer', Vue.prototype.$isServer)
+// console.log('$isServer', Vue.prototype.$isServer)
 
-// 全局config
-console.log('config', Vue.config)
+// // 全局config
+// console.log('config', Vue.config)
