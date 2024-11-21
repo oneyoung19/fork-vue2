@@ -1,3 +1,5 @@
+// 类似于v-demo="{ color: 'red' }"这样的指令 Vue其实并不会解析"{ color: 'red' }"字符串从而将其转化为对象，而是在codegen阶段生成({ color: 'red' })这样的表达式 利用new Function()自动解析
+
 export const template = `<div
   class="container"
   style="color: red"
@@ -10,6 +12,7 @@ export const template = `<div
   @[event]="handleEvent"
   v-model="value"
   v-html="html"
+  v-demo="{ color: 'red' }"
 >
   <slot></slot>
   <span>static</span>

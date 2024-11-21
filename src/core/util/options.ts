@@ -165,6 +165,7 @@ export function mergeLifecycleHook(
   return res ? dedupeHooks(res) : res
 }
 
+// 防止同一个钩子函数被多次注册 譬如引入了多次相同的mixins 那么多个created1函数要去重
 function dedupeHooks(hooks: any) {
   const res: Array<any> = []
   for (let i = 0; i < hooks.length; i++) {
@@ -192,6 +193,7 @@ function mergeAssets(
   vm: Component | null,
   key: string
 ): Object {
+  // 这里利用原型链 组件寻找路径更加清晰 Child.components => Parent.components => Vue.options.components
   const res = Object.create(parentVal || null)
   if (childVal) {
     __DEV__ && assertObjectType(key, childVal, vm)
