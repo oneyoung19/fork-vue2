@@ -1,5 +1,11 @@
 import Vue from 'core/index'
 
+Vue.config.performance = true
+
+console.dir(Vue)
+
+console.log(new Vue())
+
 const subConstructor1 = Vue.extend({
   name: 'test',
   template: '<div>test</div>',

@@ -1,5 +1,7 @@
 
-import './global-api'
+// import './global-api'
+import './instance'
+
 // import Vue from 'core/index'
 
 // console.dir(Vue)
