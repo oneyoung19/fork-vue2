@@ -1,4 +1,5 @@
 import Vue from 'core/index'
+// import 'compiler/debugger/create-compiler'
 
 Vue.config.performance = true
 

@@ -1,4 +1,4 @@
-import { template, template2, template4 } from './template'
+import { template, template2, template4, template6, template7 } from './template'
 import { createCompiler } from '../index'
 
 import { baseOptions } from 'web/compiler/options'
@@ -23,3 +23,9 @@ console.log('template2', compileToFunctions(template2))
 
 console.log('template4', compile(template4))
 console.log('template4', compileToFunctions(template4))
+
+console.log('template6', compile(template6))
+console.log('template6', compileToFunctions(template6).render)
+
+console.log('template7', compile(template7))
+console.log('template7', compileToFunctions(template7).render)

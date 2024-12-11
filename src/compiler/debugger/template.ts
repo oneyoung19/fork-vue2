@@ -24,6 +24,10 @@ export const template = `<div
       {{ slotScope }}
     </template>
   </HelloWorld>
+  <div v-for="item in list" :key="item">
+    <div v-once>{{ once }}</div>
+  </div>
+  <div v-once>{{ once2 }}</div>
 </div>`
 
 export const template2 = `<div>
@@ -60,3 +64,11 @@ export const template5 = `<div>
     <span>节点3</span>
   </div>
 </div>`
+
+export const template6 = `
+<button @click="handleMyClick" v-on="{ click: handleClick, mouseenter: handleMouseEnter }">click</button>
+`
+
+// export const template7 = `<div id="app" :[key]="value"></div>`
+export const template7 = `<div id="app" :[key1]="value1" :[key2]="value2" @[event1]="handleEvent1" @[event2]="handleEvent2""></div>`
+// @[event1]="handleEvent1" @[event2]="handleEvent2"
