@@ -150,7 +150,7 @@ export function defineReactive(
   ) {
     val = obj[key]
   }
-
+  console.log('val', val)
   let childOb = shallow ? val && val.__ob__ : observe(val, false, mock)
   Object.defineProperty(obj, key, {
     enumerable: true,
@@ -196,6 +196,7 @@ export function defineReactive(
         val = newVal
       }
       childOb = shallow ? newVal && newVal.__ob__ : observe(newVal, false, mock)
+      console.log('dep', dep)
       if (__DEV__) {
         dep.notify({
           type: TriggerOpTypes.SET,
